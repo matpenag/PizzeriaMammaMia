@@ -1,6 +1,8 @@
-import Navbar from "./componets/Navbar";
-import Footer from "./componets/Footer";
-import Home from "./componets/Home";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+//import Home from "./components/Home";
+//import Register from "./components/Register";
+import Login from "./components/Login";
 
 const App = () => {
   return (
