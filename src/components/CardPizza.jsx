@@ -4,9 +4,15 @@ const CardPizza = ({ name, price, ingredients, img }) => {
       <img src={img} className="card-img-top" alt={name} />
       <div className="card-body">
         <h5 className="card-title">{name}</h5>
-        <p className="card-text">
-          Ingredientes: {ingredients.join(", ")}
-          <br />
+        <p>
+          <strong>Ingredientes:</strong>
+        </p>
+        <ul>
+          {ingredients.map((ingredient, index) => (
+            <li key={index}>{ingredient}</li>
+          ))}
+        </ul>
+        <p>
           <strong>Precio:</strong> ${price.toLocaleString()}
         </p>
         <button className="btn btn-outline-info me-2">Ver más</button>
