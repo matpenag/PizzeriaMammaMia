@@ -4,6 +4,7 @@ import Cart from "./components/Cart";
 // import Home from "./components/Home";
 // import Login from "./components/Login";
 // import Register from "./components/Register";
+import Pizza from "./components/Pizza";
 
 const App = () => {
   return (
