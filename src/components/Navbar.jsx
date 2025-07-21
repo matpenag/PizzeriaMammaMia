@@ -1,32 +1,29 @@
 import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { useCart } from "../context/CartContext";
 
 const Navbar = () => {
-  const total = 25000;
-  const token = false;
+  const { getTotal } = useCart();
 
   return (
-    <nav className="navbar navbar-expand-lg bg-light px-3">
-      <div className="container-fluid">
-        <a className="navbar-brand" href="#">
-          🍕 Mamma Mía
-        </a>
-        <div className="d-flex gap-2">
-          <button className="btn btn-outline-primary">🍕 Home</button>
-          <button className="btn btn-outline-primary">
-            🛒 Total: ${total.toLocaleString()}
-          </button>
-          {token ? (
-            <>
-              <button className="btn btn-outline-success">🔓 Profile</button>
-              <button className="btn btn-outline-danger">🔒 Logout</button>
-            </>
-          ) : (
-            <>
-              <button className="btn btn-outline-success">🔐 Login</button>
-              <button className="btn btn-outline-secondary">🔐 Register</button>
-            </>
-          )}
-        </div>
+    <nav className="navbar navbar-expand navbar-dark bg-dark px-4">
+      <Link className="navbar-brand" to="/">
+        🍕 Mamma Mía
+      </Link>
+
+      <div className="navbar-nav ms-auto">
+        <Link className="nav-link" to="/register">
+          Registro
+        </Link>
+        <Link className="nav-link" to="/login">
+          Login
+        </Link>
+        <Link className="nav-link" to="/profile">
+          Perfil
+        </Link>
+        <Link className="nav-link" to="/cart">
+          🛒 Total: ${getTotal().toLocaleString()}
+        </Link>
       </div>
     </nav>
   );

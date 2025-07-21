@@ -9,7 +9,8 @@ const Home = () => {
       <div className="d-flex flex-wrap justify-content-center mt-4">
         {pizzas.map((pizza) => (
           <CardPizza
-            key={pizza.id}
+            key={pizza._id}
+            _id={pizza._id}
             name={pizza.name}
             price={pizza.price}
             ingredients={pizza.ingredients}
